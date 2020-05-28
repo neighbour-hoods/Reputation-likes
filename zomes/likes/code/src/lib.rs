@@ -3,11 +3,96 @@
 use hdk::prelude::*;
 use hdk_proc_macros::zome;
 
-// see https://developer.holochain.org/api/0.0.47-alpha1/hdk/ for info on using the hdk library
+//Adapted from patterns developed by @pospigos in the Holo-threaded-comments DNA
 
-// This is a sample zome that defines an entry type "MyEntry" that can be committed to the
-// agent's chain via the exposed function create_my_entry
+mod likes_entry;
+mod base_entry;
 
+use hdk::{
+    error::ZomeApiResult,
+};
+
+use hdk::holochain_core_types::{
+    cas::content::Address,
+    error::HolochainError,
+    json::JsonString,
+};
+
+use likes_entry::{
+    LikeData,
+    Like,
+    like_def,
+    handle_create_like,
+    handle_get_like,
+}
+
+
+use base_entry::{
+    base_def,
+    handle_get_like,
+}
+
+define_zome! {
+    entries: [
+        like_def(),
+        base_def().
+    ]
+
+
+    genesis: || { Ok(())}
+
+    functions:  [
+        create_like: {
+            inputs: | like: Likesdata|,
+            outputs: | result: ZomeApiResult<Address>,
+            handler: handle_create_like,
+        }
+
+        get_like: {
+            inputs: | address: Address|,
+            outputs: | result: ZomeApiResult<Like>,
+            handler: handle_get_like
+        }
+
+        get_likes: { 
+            inputs: |base: String|,
+            outputs: |result: ZomeApiResult<Vec<Like>>|,
+            handler_ handle_get_likes, 
+        }
+    ]
+
+        traits: {
+            hc_public [
+                create_comment,
+                get_like,
+                get_likes,
+            ]
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+/*
 #[derive(Serialize, Deserialize, Debug, DefaultJson, Clone)]
 pub struct MyEntry {
     content: String,
@@ -53,3 +138,4 @@ mod my_zome {
         hdk::get_entry(&address)
     }
 }
+*/
