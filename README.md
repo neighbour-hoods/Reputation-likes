@@ -1,4 +1,10 @@
-# Reputation Data Types | 'Likes'
+# Reputation-likes
+Reputation Likes through mixin-zomes or callable DNAs
+
+Adapted from patterns developed by @pospigos and @guillemcordoba
+
+**Do not install or run. Does not compile**
+
 Reputation Likes through mixin-zomes or callable DNAs
 
 For more Reputation Modules [see this url.](https://sacred-capital.gitbook.io/sacred-capital/documentation/technical/reputation-data-types)
@@ -43,4 +49,3 @@ Entry "base" {
     base : string
 }
 ```
-
