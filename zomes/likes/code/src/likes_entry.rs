@@ -11,15 +11,15 @@ use std::collections::HashMap;
 pub const LIKE_ENTRY_TYPE: &str = "like";
 
 pub struct LikeData {
-    pub base: String
-    pub timestamp: i32
+    pub base: String,
+    pub timestamp: i32,
 
 }
 
 pub struct Like {
-    base: String
-    author: Address
-    timestamp: i32
+    base: String,
+    author: Address,
+    timestamp: i32,
 }
 
 // Convert and input Like, which is without an author into a Like entry
@@ -27,8 +27,8 @@ pub struct Like {
 impl LikeData {
     pub fn with_author(&self, author: Address,) -> Comment {
         Comment{
-            base: self.base.clone()
-            timestamp: self.base.clone()
+            base: self.base.clone(),
+            timestamp: self.base.clone(),
             author,
         }
     }
@@ -48,12 +48,12 @@ pub fn handle_create_like(input_entry: Likedata) -> ZomeApiResult<Address> {
 
     // link the like to the base entry
 
-    hdk::link_entries(
-    &base_address,
-    &address
-    link type?
+    pub fn link_entries<S: Into<String>>(
+    base: &base_address,
+    target: &address,
+    link_type: S,
     LIKE_LINK_TAG,
-    )?;
+    );
 
     Ok(address)
 
