@@ -61,6 +61,18 @@ pub fn handle_create_like(input_entry: Likedata) -> ZomeApiResult<Address> {
 
 }
 
+    // link the like to the user
+hdk::link_entries(
+    base: &AGENT_ADDRESS, 
+    target: &Address, 
+    link_type: S, 
+    tag: LIKE_LINK_TAG)
+ )?;
+
+ Ok(address)
+
+}
+
 pub fn handle_get_like(address: Address) -> ZomeApiResult<Like> {
     get_as_type(address)
 }
