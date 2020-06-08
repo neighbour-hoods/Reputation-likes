@@ -8,6 +8,8 @@ Reputation Modules are designed as separate DHT's that can bridge into any exist
 
 For example, a community can swap out a 'likes' module and instead decide to incorporate 'claps' or 'upvotes/downvotes' based on how they wish to articulate culture within their collective. 
 
+They do so by picking a DNA template, and adding their community's unique identifier in the 'properties' field to spin-off a new DHT. 
+
 ![](https://i.imgur.com/8Aju8wB.png)
 
 
