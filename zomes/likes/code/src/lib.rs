@@ -12,6 +12,68 @@ use hdk::{
     error::ZomeApiResult,
 };
 
+mod course_zome {
+
+    #[init]
+    fn init() {
+      Ok(())
+    }
+  
+    #[validate_agent]
+    pub fn validate_agent(validation_data: EntryValidationData<AgentId>) {
+      Ok(())
+    }
+  
+    #[zome_fn("hc_public")]
+    fn get_my_address() -> ZomeApiResult<Address> {
+      Ok(AGENT_ADDRESS.clone())
+    }
+
+// Likes_Entry Definition and functions
+
+#[entry_def]
+  fn handle_get_like() -> ValidatingEntryType {
+    likes_entry::like_def()
+  }
+
+  #[zome_fn("hc_public")]
+  fn new(base: String, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
+    likes_entry::new(base, author, timestamp)
+  }
+
+// Base_Entry Definition and functions
+
+#[entry_def]
+  fn handle_get_base() -> ValidatingEntryType {
+    base_entry::base_def()
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 use hdk::holochain_core_types::{
     cas::content::Address,
     error::HolochainError,
@@ -30,8 +92,26 @@ use likes_entry::{
 use base_entry::{
     base_def,
     handle_get_like,
-}
+};  
 
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 define_zome! {
     entries: [
         like_def(),
@@ -60,7 +140,7 @@ define_zome! {
 
 }
 
-
+*/
 
 
 
