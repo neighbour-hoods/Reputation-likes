@@ -11,13 +11,13 @@ use super::likes_entry::{
     LIKE_ENTRY_TYPE,
 };
 
-pub const BASE_ENTRY_TYPE: &str = "base";
+// pub const BASE_ENTRY_TYPE: &str = "base";
 
 pub type Base = String;
 
-pub const LIKE_LINK_TAG: &str = "likedon";
+// pub const LIKE_LINK_TAG: &str = "likedon";
 
-pub fn handle_get_likes(base: String) -> ZomeApiResult<Vec<Comment>> {
+pub fn handle_get_likes(base: String) -> ZomeApiResult<Vec<Like>> {
     let address = hdk::entry_address(&Entry::App(BASE_ENTRY_TYPE.into(), base.into()))?;
     get_links_and_load_type(&address, LIKE_LINK_TAG)
 }
@@ -25,7 +25,7 @@ pub fn handle_get_likes(base: String) -> ZomeApiResult<Vec<Comment>> {
 pub fn base_def() -> ValidatingEntryType {
     entry!(
         name: BASE_ENTRY_TYPE,
-        description: "Universally unique ID of something that is being commented on",
+        description: "Universally unique ID of something that is being Liked",
         sharing: Sharing::Public,
         validation_package: || {
             hdk::ValidationPackageDefinition::Entry

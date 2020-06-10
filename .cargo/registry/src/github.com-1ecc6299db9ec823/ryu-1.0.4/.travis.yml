@@ -1,0 +1,23 @@
+language: rust
+
+matrix:
+  include:
+    - rust: nightly
+      script:
+        - cargo test
+        - cargo build --tests --features no-panic --release
+    - rust: beta
+      script:
+        - cargo test
+    - rust: stable
+      script:
+        - cargo test
+    - rust: 1.15.0
+      script:
+        - cargo build
+        - cargo build --features small
+    - rust: nightly
+      name: Miri
+      script:
+        - rustup component add miri || travis_terminate 0
+        - cargo miri test

@@ -1,0 +1,7 @@
+cargo:rustc-env=HDK_HASH=mjspkznwqaa3h9j6qgfdy8cjg792f6nk
+cargo:rustc-env=HDK_VERSION=0.0.47-alpha1
+cargo:rustc-env=GIT_HASH=3137d7c2527f7527b49379fff295577336570093
+
+cargo:rustc-env=GIT_BRANCH=master
+
+cargo:rustc-env=BUILD_DATE=2020-06-10 09:11:12

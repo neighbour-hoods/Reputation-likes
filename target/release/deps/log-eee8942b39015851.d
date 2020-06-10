@@ -1,0 +1,9 @@
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/log-eee8942b39015851.rmeta: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/macros.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/serde.rs
+
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/liblog-eee8942b39015851.rlib: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/macros.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/serde.rs
+
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/log-eee8942b39015851.d: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/macros.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/serde.rs
+
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/lib.rs:
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/macros.rs:
+/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.8/src/serde.rs:
