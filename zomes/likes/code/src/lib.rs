@@ -24,7 +24,7 @@ use likes_entry::{
     like_def,
     handle_create_like,
     handle_get_like,
-}
+};
 
 
 use base_entry::{
@@ -42,23 +42,12 @@ define_zome! {
     genesis: || { Ok(())}
 
     functions:  [
-        create_like: {
-            inputs: | like: Likesdata|,
+        new: {
+            inputs: | like: Likes|,
             outputs: | result: ZomeApiResult<Address>,
             handler: handle_create_like,
         }
 
-        get_like: {
-            inputs: | address: Address|,
-            outputs: | result: ZomeApiResult<Like>,
-            handler: handle_get_like
-        }
-
-        get_likes: { 
-            inputs: |base: String|,
-            outputs: |result: ZomeApiResult<Vec<Like>>|,
-            handler_ handle_get_likes, 
-        }
     ]
 
         traits: {
