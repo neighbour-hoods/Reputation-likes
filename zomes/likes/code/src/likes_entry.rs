@@ -4,7 +4,6 @@ use hdk::holochain_core_types::time::Timeout;
 use hdk::prelude::*;
 use holochain_entry_utils::HolochainEntry;
 use std::collections::HashMap;
-#[derive(Serialize, Deserialize, Debug, DefaultJson, Clone)]
 
 pub const LIKE_ENTRY_TYPE: &str = "like";
 
@@ -55,10 +54,10 @@ pub fn like_def() ->  ValidatingEntryType {
         links: [
             from!(
                 &AGENT_ADDRESS,
-                link_type: "link from a user to a like"
+                link_type: "link from a user to a like",
                 validation_package || {
                     hdk::ValidationPackageDefinition::Entry
-              }              ,
+              },          
               validation: | _validation_data: hdk::LinkValidationData | {
                 Ok(())
                 }
