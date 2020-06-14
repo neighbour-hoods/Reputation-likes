@@ -5,14 +5,14 @@ use hdk_proc_macros::zome;
 
 //Adapted from patterns developed by @pospigos in the Holo-threaded-comments DNA
 
-mod likes_entry;
+mod like;
 mod base_entry;
 
 use hdk::{
     error::ZomeApiResult,
 };
 
-mod course_zome {
+mod likes_zome {
 
     #[init]
     fn init() {
@@ -37,8 +37,8 @@ mod course_zome {
   }
 
   #[zome_fn("hc_public")]
-  fn new(base: String, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
-    likes_entry::new(base, author, timestamp)
+  fn create(base: String, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
+    crate::like::handlers::create(base, author, timestamp)
   }
 
 // Base_Entry Definition and functions
