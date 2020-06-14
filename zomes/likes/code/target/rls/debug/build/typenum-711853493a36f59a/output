@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/sidsthalekar/home_directory/Github/Reputation-likes/zomes/likes/code/target/rls/debug/build/typenum-711853493a36f59a/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/sidsthalekar/home_directory/Github/Reputation-likes/zomes/likes/code/target/rls/debug/build/typenum-711853493a36f59a/out/op.rs

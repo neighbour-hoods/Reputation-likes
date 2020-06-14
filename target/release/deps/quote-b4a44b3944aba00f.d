@@ -1,9 +1,0 @@
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/quote-b4a44b3944aba00f.rmeta: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/tokens.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/to_tokens.rs
-
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/libquote-b4a44b3944aba00f.rlib: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/tokens.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/to_tokens.rs
-
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/target/release/deps/quote-b4a44b3944aba00f.d: /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/lib.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/tokens.rs /Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/to_tokens.rs
-
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/lib.rs:
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/tokens.rs:
-/Users/sidsthalekar/home_directory/Github/Reputation-likes/.cargo/registry/src/github.com-1ecc6299db9ec823/quote-0.4.2/src/to_tokens.rs:
