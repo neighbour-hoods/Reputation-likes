@@ -1,14 +1,20 @@
 //use hdk::holochain_core_types::chain_header::ChainHeader;
-use hdk::ValidationData;
+use hdk::{
+    ValidationData,
+    LinkValidationData,
+    holochain_core_types::chain_header::ChainHeader
+};
 
 use super::entry::Like;
 
-pub fn create(_entry: Like, _validation_data: ValidationData) -> Result<(), String> {
+pub fn create(_validation_data: ValidationData) -> Result<(), String> {
     // TODO: validate that agent is only creating one like per base entry
     Ok(())
 }
 
-pub fn delete(_entry: Like, _validation_data: ValidationData) -> Result<(), String> {
+pub fn delete(_old_entry: Like,
+    _old_entry_header: ChainHeader,
+    _validation_data: ValidationData) -> Result<(), String> {
     // TODO: validate that agent is only deleting their own like
     Ok(())
 }
