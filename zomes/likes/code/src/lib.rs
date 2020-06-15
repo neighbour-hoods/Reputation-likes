@@ -1,17 +1,20 @@
 #![feature(proc_macro_hygiene)]
 
-use hdk::prelude::*;
+use hdk::{
+    prelude::*,
+    error::ZomeApiResult,
+    AGENT_ADDRESS
+};
 use hdk_proc_macros::zome;
+extern crate holochain_entry_utils;
 
 //Adapted from patterns developed by @pospigos in the Holo-threaded-comments DNA
 
 mod like;
-mod base_entry;
+mod base;
+use base::entry::Base;
 
-use hdk::{
-    error::ZomeApiResult,
-};
-
+#[zome]
 mod likes_zome {
 
     #[init]
@@ -33,11 +36,11 @@ mod likes_zome {
 
 #[entry_def]
   fn handle_get_like() -> ValidatingEntryType {
-    likes_entry::like_def()
+    crate::like::entry::like_def()
   }
 
   #[zome_fn("hc_public")]
-  fn create(base: String, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
+  fn create(base: Base, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
     crate::like::handlers::create(base, author, timestamp)
   }
 
@@ -45,7 +48,7 @@ mod likes_zome {
 
 #[entry_def]
   fn handle_get_base() -> ValidatingEntryType {
-    base_entry::base_def()
+    crate::base::entry::base_def()
   }
 
 
