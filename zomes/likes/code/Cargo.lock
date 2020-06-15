@@ -453,6 +453,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "holochain_entry_utils"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "hdk 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "holochain_json_derive 0.0.30 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde 1.0.104 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_derive 1.0.104 (registry+https://github.com/rust-lang/crates.io-index)",
+ "serde_json 1.0.47 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "holochain_json_api"
 version = "0.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -642,6 +654,7 @@ dependencies = [
  "futures-util 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "hdk 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)",
  "hdk_proc_macros 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "holochain_entry_utils 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "holochain_json_derive 0.0.30 (registry+https://github.com/rust-lang/crates.io-index)",
  "holochain_wasm_utils 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.104 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1402,6 +1415,7 @@ dependencies = [
 "checksum hdk_proc_macros 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)" = "fe9e8ac454b1f4295e32ee983ca0ad955bc093dd5417cc19f32f608874a13577"
 "checksum hermit-abi 0.1.13 (registry+https://github.com/rust-lang/crates.io-index)" = "91780f809e750b0a89f5544be56617ff6b1227ee485bcb06ebe10cdf89bd3b71"
 "checksum holochain_core_types 0.0.47-alpha1 (registry+https://github.com/rust-lang/crates.io-index)" = "4ba6bc13a50d65f189e16c28849b2721952e29fc1c48e52b80c0c673c52f2979"
+"checksum holochain_entry_utils 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "2a3ba5f0efff1e1477ff50945565503f70ce6392cd32a5cb7c6c336a21eabbea"
 "checksum holochain_json_api 0.0.23 (registry+https://github.com/rust-lang/crates.io-index)" = "723490ea3377bde2f4ac07ea63c7ccdf0bf20eb699a0ed580566fe927b735bba"
 "checksum holochain_json_derive 0.0.23 (registry+https://github.com/rust-lang/crates.io-index)" = "6d411807a76c2a2f45bee166d576e65eee2659be61a62f10008e94313be1b537"
 "checksum holochain_json_derive 0.0.30 (registry+https://github.com/rust-lang/crates.io-index)" = "0b5398db53eb5236286b8538b74135cd02f9b4ea6b83c3b037f887b953139b39"
