@@ -1,11 +1,10 @@
 use hdk::prelude::*;
 use holochain_entry_utils::HolochainEntry;
-//use hdk::AGENT_ADDRESS;
 
 use super::validation;
 use crate::base::entry::Base;
 
-//pub const LIKE_FROM_AGENT_LINK: &str = "agent->like";
+pub const LIKE_FROM_AGENT_LINK: &str = "agent->like";
 
 #[derive(Serialize, Deserialize, Debug, DefaultJson, Clone)]
 pub struct Like {
@@ -53,9 +52,9 @@ pub fn like_def() ->  ValidatingEntryType {
                  }
             }
         },
-        links: [/*
+        links: [
             from!(
-                &AGENT_ADDRESS,
+                "%agent_id",
                 link_type: LIKE_FROM_AGENT_LINK,
                 validation_package: || {
                     hdk::ValidationPackageDefinition::Entry
@@ -63,7 +62,7 @@ pub fn like_def() ->  ValidatingEntryType {
               validation: | validation_data: hdk::LinkValidationData | {
                   validation::agent_link(validation_data)
                 }
-            )*/
+            )
         ]
     )
 
