@@ -1,7 +1,7 @@
 //use hdk::holochain_core_types::chain_header::ChainHeader;
 use hdk::{
     ValidationData,
-    LinkValidationData,
+    //LinkValidationData,
     holochain_core_types::chain_header::ChainHeader
 };
 
@@ -19,15 +19,16 @@ pub fn delete(_old_entry: Like,
     Ok(())
 }
 
+/*
 pub fn agent_link(validation_data: LinkValidationData) -> Result<(), String> {
     match validation_data {
-        hdk::LinkValidationData::LinkAdd { link: _, validation_data, } => {
+        hdk::LinkValidationData::LinkAdd { link: _, validation_data: _, } => {
             // TODO: validate here that we're linking to LIke that belongs to this agent
             Ok(())
         },
-        hdk::LinkValidationData::LinkRemove { link: _, validation_data, } => {
+        hdk::LinkValidationData::LinkRemove { link: _, validation_data: _, } => {
             // TODO: validate here that we're removling link to LIke that belongs to this agent
             Ok(())
         },
     }
-}
+}*/
