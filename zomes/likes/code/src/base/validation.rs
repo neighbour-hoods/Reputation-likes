@@ -26,10 +26,10 @@ pub fn delete(_old_entry: Base,
 pub fn like_link(validation_data: LinkValidationData) -> Result<(), String> {
     // e-nastasia: not sure what to validate here
     match validation_data {
-        hdk::LinkValidationData::LinkAdd { link: _, validation_data, } => {           
+        hdk::LinkValidationData::LinkAdd { link: _, validation_data: _, } => {           
             Ok(())
         },
-        hdk::LinkValidationData::LinkRemove { link: _, validation_data, } => {
+        hdk::LinkValidationData::LinkRemove { link: _, validation_data: _, } => {
             Ok(())
         },
     }
