@@ -1,14 +1,14 @@
 use hdk::prelude::*;
 use holochain_entry_utils::HolochainEntry;
-use hdk::AGENT_ADDRESS;
 
 use super::validation;
+use crate::base::entry::Base;
 
 pub const LIKE_FROM_AGENT_LINK: &str = "agent->like";
 
 #[derive(Serialize, Deserialize, Debug, DefaultJson, Clone)]
 pub struct Like {
-    base: String,
+    base: Base,
     author: Address,
     timestamp: u64,
 }
@@ -22,7 +22,7 @@ impl HolochainEntry for Like {
 }
 
 impl Like {
-    pub fn new(base: String, author: Address, timestamp: u64) -> Self {
+    pub fn new(base: Base, author: Address, timestamp: u64) -> Self {
         Like{
             base: base,
             timestamp: timestamp,
@@ -39,7 +39,7 @@ pub fn like_def() ->  ValidatingEntryType {
         validation_package: || {
             hdk::ValidationPackageDefinition::Entry
         },
-        validation: | _validation_data: hdk::EntryValidationData<Like>| {
+        validation: | validation_data: hdk::EntryValidationData<Like>| {
             match validation_data{
                 EntryValidationData::Create { validation_data, .. } => {
                     validation::create(validation_data)
@@ -47,14 +47,14 @@ pub fn like_def() ->  ValidatingEntryType {
                  EntryValidationData::Modify { .. } => {
                     return Err(String::from("Cannot modify like: only create & delete are allowed"));
                  },
-                 EntryValidationData::Delete { validation_data } => {
-                    validation::delete(validation_data)
+                 EntryValidationData::Delete { old_entry, old_entry_header, validation_data } => {
+                    validation::delete(old_entry, old_entry_header, validation_data)
                  }
             }
         },
         links: [
             from!(
-                &AGENT_ADDRESS,
+                "%agent_id",
                 link_type: LIKE_FROM_AGENT_LINK,
                 validation_package: || {
                     hdk::ValidationPackageDefinition::Entry
