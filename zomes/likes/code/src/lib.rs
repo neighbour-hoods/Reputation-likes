@@ -1,17 +1,13 @@
 #![feature(proc_macro_hygiene)]
 
-use hdk::{
-    prelude::*,
-    error::ZomeApiResult,
-    AGENT_ADDRESS
-};
+use hdk::{error::ZomeApiResult, prelude::*, AGENT_ADDRESS};
 use hdk_proc_macros::zome;
 extern crate holochain_entry_utils;
 
 //Adapted from patterns developed by @pospigos in the Holo-threaded-comments DNA
 
-mod like;
 mod base;
+mod like;
 use base::entry::Base;
 
 #[zome]
@@ -19,60 +15,38 @@ mod likes_zome {
 
     #[init]
     fn init() {
-      Ok(())
+        Ok(())
     }
-  
+
     #[validate_agent]
     pub fn validate_agent(validation_data: EntryValidationData<AgentId>) {
-      Ok(())
+        Ok(())
     }
-  
+
     #[zome_fn("hc_public")]
     fn get_my_address() -> ZomeApiResult<Address> {
-      Ok(AGENT_ADDRESS.clone())
+        Ok(AGENT_ADDRESS.clone())
     }
 
-// Likes_Entry Definition and functions
+    // Likes_Entry Definition and functions
 
-#[entry_def]
-  fn handle_get_like() -> ValidatingEntryType {
-    crate::like::entry::like_def()
-  }
+    #[entry_def]
+    fn handle_get_like() -> ValidatingEntryType {
+        crate::like::entry::like_def()
+    }
 
-  #[zome_fn("hc_public")]
-  fn create(base: Base, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
-    crate::like::handlers::create(base, author, timestamp)
-  }
+    #[zome_fn("hc_public")]
+    fn create(base: Base, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
+        crate::like::handlers::create(base, author, timestamp)
+    }
 
-// Base_Entry Definition and functions
+    // Base_Entry Definition and functions
 
-#[entry_def]
-  fn handle_get_base() -> ValidatingEntryType {
-    crate::base::entry::base_def()
-  }
-
-
-
-
+    #[entry_def]
+    fn handle_get_base() -> ValidatingEntryType {
+        crate::base::entry::base_def()
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 
@@ -95,24 +69,11 @@ use likes_entry::{
 use base_entry::{
     base_def,
     handle_get_like,
-};  
+};
 
 
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 define_zome! {
@@ -144,24 +105,6 @@ define_zome! {
 }
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //////////////////////////////////////
 /*

@@ -1,5 +1,5 @@
-use hdk::prelude::*;
 use crate::holochain_entry_utils::HolochainEntry;
+use hdk::prelude::*;
 
 use super::entry::Like;
 use crate::base::entry::Base;

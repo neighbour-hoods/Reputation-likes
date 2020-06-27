@@ -23,7 +23,7 @@ impl HolochainEntry for Like {
 
 impl Like {
     pub fn new(base: Base, author: Address, timestamp: u64) -> Self {
-        Like{
+        Like {
             base: base,
             timestamp: timestamp,
             author: author,
@@ -31,7 +31,7 @@ impl Like {
     }
 }
 
-pub fn like_def() ->  ValidatingEntryType {
+pub fn like_def() -> ValidatingEntryType {
     entry!(
         name: Like::entry_type(),
         description: "A like made against a base entry in another dna or zome",
@@ -58,12 +58,11 @@ pub fn like_def() ->  ValidatingEntryType {
                 link_type: LIKE_FROM_AGENT_LINK,
                 validation_package: || {
                     hdk::ValidationPackageDefinition::Entry
-              },          
+              },
               validation: | validation_data: hdk::LinkValidationData | {
                   validation::agent_link(validation_data)
                 }
             )
         ]
     )
-
 }
