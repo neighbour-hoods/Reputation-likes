@@ -24,7 +24,7 @@ Assuming they pick the 'likes' DNA, they will also have the choice of whether:
 
 ## Implementation as a Separate DNA
 
-- Any front-end module should be able to call this 'Like' DNA for it's users to validate other users.
+- Any front-end module should be able to call this 'Like' DNA for its users to validate other users.
 - Likes are always issued by a user towards a 'base entry' that is created by another user. The 'base entry' is undefined by us. It could be a post, a photo, a blog, audio file etc.
 - The maximum likes a user can attach to a base entry is 1. (discuss) 
 
