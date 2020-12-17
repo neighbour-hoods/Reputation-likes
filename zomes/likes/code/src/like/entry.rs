@@ -2,19 +2,18 @@ use hdk::prelude::*;
 use holochain_entry_utils::HolochainEntry;
 
 use super::validation;
-use crate::base::entry::Base;
 
 pub const LIKE_FROM_AGENT_LINK: &str = "agent->like";
 
 #[derive(Serialize, Deserialize, Debug, DefaultJson, Clone)]
 pub struct Like {
-    base: Base,
-    author: Address,
-    timestamp: u64,
+    pub base_addr: Address,
+    pub author_addr: Address,
+    pub timestamp: u64,
 }
 
 // e-nastasia: implementing HolochainEntry gives access to several helper methods
-// and so we don't have to implement them ourselves
+// so we don't have to implement them ourselves
 impl HolochainEntry for Like {
     fn entry_type() -> String {
         String::from("like")
@@ -22,11 +21,11 @@ impl HolochainEntry for Like {
 }
 
 impl Like {
-    pub fn new(base: Base, author: Address, timestamp: u64) -> Self {
+    pub fn new(base_addr: Address, author_addr: Address, timestamp: u64) -> Self {
         Like {
-            base: base,
+            base_addr: base_addr,
             timestamp: timestamp,
-            author: author,
+            author_addr: author_addr,
         }
     }
 }

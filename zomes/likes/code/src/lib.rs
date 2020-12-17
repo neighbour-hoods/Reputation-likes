@@ -8,7 +8,6 @@ extern crate holochain_entry_utils;
 
 mod base;
 mod like;
-use base::entry::Base;
 
 #[zome]
 mod likes_zome {
@@ -29,19 +28,22 @@ mod likes_zome {
     }
 
     // Likes_Entry Definition and functions
-
     #[entry_def]
     fn handle_get_like() -> ValidatingEntryType {
         crate::like::entry::like_def()
     }
 
     #[zome_fn("hc_public")]
-    fn create(base: Base, author: Address, timestamp: u64) -> ZomeApiResult<Address> {
-        crate::like::handlers::create(base, author, timestamp)
+    fn create(base_addr: Address, author_addr: Address, timestamp: u64) -> ZomeApiResult<Address> {
+        crate::like::handlers::create(base_addr, author_addr, timestamp)
+    }
+
+    #[zome_fn("hc_public")]
+    fn delete(address: Address) -> ZomeApiResult<Address> {
+        crate::like::handlers::delete(address)
     }
 
     // Base_Entry Definition and functions
-
     #[entry_def]
     fn handle_get_base() -> ValidatingEntryType {
         crate::base::entry::base_def()
